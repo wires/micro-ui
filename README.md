@@ -1,6 +1,20 @@
 # Minimalistic way to do web UIs
 
-Not super small or anything:
+Not a lot of files:
+
+	.
+	├── README.md
+	├── package.json
+	├── public
+	│   └── index.html
+	├── src
+	│   └── ui.js
+	├── templates
+	│   ├── landing.jade
+	│   └── layout.jade
+	└── webpack.config.js
+
+Neither super small or anything:
 
 ```
 Hash: 8044ed1a59d93707f876
@@ -14,7 +28,14 @@ bundle.js.map  80.7 kB       0  [emitted]  main
 
 But very simple:
 
+- There is a single **state** object, managed by `main-loop`
+- To update the state, call `loop.update` with a new state
+- Import a `.jade` file as a hyperscript function
+
+Main UI code:
+
 ```js
+// ui.js
 import vdom from 'virtual-dom'
 import main from 'main-loop'
 
@@ -42,15 +63,13 @@ And from your template, you can call `updateSomething` or
 refer to state such as `times`.
 
 ```jade
-// ./templates/landing.jade
-doctype html
-html
-  body
-    h1 it's minimalistic
-    h4 very very
-    button.pure-button.primary(onclick=updateSomething) Click
-    p clicked this many times:
-      span= times
+//- templates/landing.jade
+extends layout
+block content
+  h1 it's minimalistic
+  h4 very very
+  button.pure-button.primary(onclick=updateSomething) Click
+  p clicked this many times:
+    span= times
 ```
 
-To update the state, call `loop.update`

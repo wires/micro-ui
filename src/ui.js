@@ -1,7 +1,7 @@
 import vdom from 'virtual-dom'
 import main from 'main-loop'
 
-import landing from './templates/landing.jade';
+import landing from '../templates/landing.jade';
 
 const render = landing
 

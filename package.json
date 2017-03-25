@@ -2,7 +2,7 @@
   "name": "micro-ui",
   "version": "1.0.0",
   "description": "Minimalistic UIs",
-  "main": "ui.js",
+  "main": "src/ui.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --inline --content-base public/",
     "test": "echo \"Error: no test specified\" && exit 1"
