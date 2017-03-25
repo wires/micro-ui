@@ -1,0 +1,31 @@
+//- layout.pug
+doctype html
+html
+  head
+    link(
+      rel='stylesheet'
+      href='http://yui.yahooapis.com/pure/0.6.0/pure-min.css'
+    )
+    link(
+      rel='stylesheet'
+      href='http://yui.yahooapis.com/pure/0.6.0/base-min.css'
+    )
+    link(
+      rel='stylesheet'
+      href='https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css'
+      integrity='sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU'
+      crossorigin='anonymous'
+    )
+    style.
+      body {
+        background-color: #fff;
+        font-family: sans-serif;
+        padding: 0.4em;
+      }
+      .fa {
+        padding-right: .4em;
+      }
+    block title
+      title Welcome to my minimalistic page
+  body
+    block content

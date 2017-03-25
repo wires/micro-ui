@@ -1,0 +1,19 @@
+//- landing
+extends layout
+
+block content
+  h1 it's minimalistic
+  h4 very very
+  div
+    ul
+      li `main-loop` ~ keep central state
+      li `virtual-dom` ~ hyperscript
+      li `virtual-jade` ~ pugs templates to hyperscript
+      li `webpack` + `babel` ~ to compile + bundle the JS
+  button.pure-button.primary(onclick=updateSomething) The the main loop
+  p clicked this many times:
+    span= times
+  if eventData
+    code= JSON.stringify(eventData)
+  else
+    span no events fired
